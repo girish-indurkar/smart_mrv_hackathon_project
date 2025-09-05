@@ -84,8 +84,9 @@ R² / MAE for each target are stored in `train_summary.json`.
 - The models are scikit-learn RandomForests in a preprocessing Pipeline.
 - Extend easily with geospatial features and remote sensing stacks.
 
-## Demo:
-https://4d10036b-baca-4321-a7d6-f6defa8f9760-00-29kzsbrjjaw5r.pike.replit.dev/
-https://limewire.com/d/PTuUI#CrZJHGOne8
+## 🚀 Demo:
+
+🔗 [Live App on Replit](https://4d10036b-baca-4321-a7d6-f6defa8f9760-00-29kzsbrjjaw5r.pike.replit.dev/)  
+
 ## 📚 License
 MIT
