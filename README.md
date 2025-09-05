@@ -1,7 +1,7 @@
 
 # 🌾 Smart MRV for Agroforestry & Rice — Hackathon Starter
 
-## 🧰 Built With
+
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
 ![Streamlit](https://img.shields.io/badge/Streamlit-%E2%9D%A4-red?logo=streamlit)
