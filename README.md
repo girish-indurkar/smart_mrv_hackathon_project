@@ -1,6 +1,17 @@
 
 # 🌾 Smart MRV for Agroforestry & Rice — Hackathon Starter
 
+## 🧰 Built With
+
+![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-%E2%9D%A4-red?logo=streamlit)
+![Flask](https://img.shields.io/badge/Flask-API-black?logo=flask)
+![NumPy](https://img.shields.io/badge/NumPy-Math-blue?logo=numpy)
+![pandas](https://img.shields.io/badge/pandas-Data-green?logo=pandas)
+![joblib](https://img.shields.io/badge/joblib-Model%20IO-orange)
+![Replit](https://img.shields.io/badge/Replit-Cloud-blue?logo=replit)
+
+
 This project is a **hackathon-ready** AI/ML solution that:
 - Generates a **synthetic dataset** (2000 rows)
 - Trains **3 ML models**: rice yield (t/ha), carbon stock (tCO₂e/ha), CH₄ emission (kg/ha)
@@ -73,5 +84,8 @@ R² / MAE for each target are stored in `train_summary.json`.
 - The models are scikit-learn RandomForests in a preprocessing Pipeline.
 - Extend easily with geospatial features and remote sensing stacks.
 
+## Demo:
+https://4d10036b-baca-4321-a7d6-f6defa8f9760-00-29kzsbrjjaw5r.pike.replit.dev/
+https://limewire.com/d/PTuUI#CrZJHGOne8
 ## 📚 License
 MIT
