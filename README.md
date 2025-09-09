@@ -88,5 +88,3 @@ R² / MAE for each target are stored in `train_summary.json`.
 
 🔗 [Live App on Replit](https://4d10036b-baca-4321-a7d6-f6defa8f9760-00-29kzsbrjjaw5r.pike.replit.dev/)  
 
-## 📚 License
-MIT
