@@ -1,7 +1,4 @@
-
-# 🌾 Smart MRV for Agroforestry & Rice — Hackathon Starter
-
-
+# Smart MRV Hackathon Project
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
 ![Streamlit](https://img.shields.io/badge/Streamlit-%E2%9D%A4-red?logo=streamlit)
@@ -12,50 +9,100 @@
 ![Replit](https://img.shields.io/badge/Replit-Cloud-blue?logo=replit)
 
 
-This project is a **hackathon-ready** AI/ML solution that:
-- Generates a **synthetic dataset** (2000 rows)
-- Trains **3 ML models**: rice yield (t/ha), carbon stock (tCO₂e/ha), CH₄ emission (kg/ha)
-- Provides a **Flask backend** for predictions
-- Provides a **Streamlit frontend** for a friendly UI
+## Table of Contents
 
-## 📦 Structure
+- [Description](#description)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [File Structure Overview](#file-structure-overview)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Reference](#api-reference)
+- [Demo](#demo)
+- [Contributing](#contributing)
+- [License](#license)
+- [Author](#author)
+- [Contact](#contact)
+
+## Description
+
+This project appears to be a hackathon-ready AI/ML solution focused on Measurement, Reporting, and Verification (MRV) for agroforestry and rice cultivation. It includes data generation, model training, a Flask backend, and a Streamlit frontend.
+
+## Features
+
+- Generates synthetic datasets for agroforestry and rice MRV.
+- Trains machine learning models for rice yield, carbon stock, and CH₄ emission prediction.
+- Provides a Flask API for serving predictions.
+- Includes a Streamlit UI for user interaction.
+
+## Tech Stack
+
+- Python
+- Streamlit
+- Flask
+- NumPy
+- Pandas
+- Joblib
+- Scikit-Learn 
+
+## File Structure Overview
+
 ```
 .
-├── data/
-│   └── agroforestry_rice_mrv_2000.csv
-├── models/
-│   ├── rice_yield_t_ha.joblib
-│   ├── carbon_stock_tco2e_ha.joblib
-│   └── ch4_emission_kg_ha.joblib
-├── app.py                 # Flask API (localhost:8000)
-├── streamlit_app.py       # Streamlit UI
-├── train_summary.json     # Metrics summary (R², MAE)
-└── requirements.txt
+├── .gitattributes
+├── .idea
+├── README.md
+├── app.py
+├── data
+│   └── ...
+├── models
+│   └── ...
+├── requirements.txt
+├── streamlit_app.py
+└── train_summary.json
 ```
 
-## 🚀 Quickstart
+## Prerequisites
 
-1) Create a virtual environment and install deps
-```bash
-python -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-```
+- Python 3.9+
 
-2) Start the Flask backend
-```bash
-python app.py
-```
+## Installation
 
-3) Run the Streamlit frontend (new terminal)
-```bash
-streamlit run streamlit_app.py
-```
-By default, the Streamlit app will call `http://localhost:8000/predict`. You can edit the URL in the UI.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/girish-indurkar/smart_mrv_hackathon_project
+   cd smart_mrv_hackathon_project
+   ```
+2. Create a virtual environment (recommended):
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   ```
+3. Install the dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## 🧪 Try a cURL request
+## Usage
+
+1. Start the Flask backend:
+   ```bash
+   python app.py
+   ```
+2. Run the Streamlit frontend (in a separate terminal):
+   ```bash
+   streamlit run streamlit_app.py
+   ```
+
+The Streamlit app will call `http://localhost:8000/predict` by default.  You can adjust this URL within the Streamlit interface.
+
+**Example cURL Request:**
+
 ```bash
-curl -X POST http://localhost:8000/predict   -H "Content-Type: application/json"   -d '{
+curl -X POST http://localhost:8000/predict \
+  -H "Content-Type: application/json" \
+  -d '{
     "region": "Indo-Gangetic Plain",
     "latitude": 26.5,
     "longitude": 82.0,
@@ -76,15 +123,48 @@ curl -X POST http://localhost:8000/predict   -H "Content-Type: application/json"
   }'
 ```
 
-## 📊 Training Metrics
-R² / MAE for each target are stored in `train_summary.json`.
+## API Reference
 
-## 🛠 Notes
-- The dataset is **synthetic** (simulated) but constructed with realistic relationships.
-- The models are scikit-learn RandomForests in a preprocessing Pipeline.
-- Extend easily with geospatial features and remote sensing stacks.
+The Flask API provides a `/predict` endpoint for making predictions. It expects a JSON payload with the following keys:
 
-## 🚀 Demo:
+- `region` (string): Region name.
+- `latitude` (float): Latitude of the farm.
+- `longitude` (float): Longitude of the farm.
+- `farm_size_ha` (float): Farm size in hectares.
+- `soil_ph` (float): Soil pH.
+- `soil_organic_carbon_pct` (float): Soil organic carbon percentage.
+- `clay_pct` (int): Clay percentage in the soil.
+- `annual_rainfall_mm` (int): Annual rainfall in millimeters.
+- `avg_temp_c` (float): Average temperature in Celsius.
+- `ndvi` (float): Normalized Difference Vegetation Index.
+- `evi` (float): Enhanced Vegetation Index.
+- `tree_density_per_ha` (int): Tree density per hectare.
+- `water_depth_cm` (float): Water depth in centimeters.
+- `fertilizer_n_kg_ha` (float): Fertilizer nitrogen application in kg/ha.
+- `residue_management` (string): Residue management practice (e.g., "incorporated").
+- `irrigation` (string): Irrigation method (e.g., "flood").
+- `rice_variety` (string): Rice variety.
 
-🔗 [Live App on Replit](https://4d10036b-baca-4321-a7d6-f6defa8f9760-00-29kzsbrjjaw5r.pike.replit.dev/)  
+The API returns a JSON response containing predicted values for rice yield, carbon stock, and CH₄ emission.
 
+##  Demo
+
+🔗 [Live App on Replit](https://4d10036b-baca-4321-a7d6-f6defa8f9760-00-29kzsbrjjaw5r.pike.replit.dev/)
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Author
+
+<!-- TODO: Add author details -->
+
+## Contact
+
+ [https://github.com/girish-indurkar/smart_mrv_hackathon_project](https://github.com/girish-indurkar/smart_mrv_hackathon_project) 
