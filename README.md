@@ -148,9 +148,7 @@ The Flask API provides a `/predict` endpoint for making predictions. It expects 
 The API returns a JSON response containing predicted values for rice yield, carbon stock, and CH₄ emission.
 
 ##  Demo
-
-🔗 [Live App on Replit](https://4d10036b-baca-4321-a7d6-f6defa8f9760-00-29kzsbrjjaw5r.pike.replit.dev/)
-
+[screen-capture.webm](https://github.com/user-attachments/assets/8cc73013-5bae-4f21-90b7-8b2a0deee721)
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
